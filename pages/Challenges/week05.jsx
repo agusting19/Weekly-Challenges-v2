@@ -71,12 +71,12 @@ const Week05 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.statement__form}
           >
             <input
               name="imgLink"
               placeholder="URL of the img"
               onChange={onChange}
+              className={styles.statement__form__input}
             />
             <ButtonSolution />
           </form>

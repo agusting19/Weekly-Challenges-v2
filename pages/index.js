@@ -33,15 +33,13 @@ export default function Home() {
           <p>solutions uploaded by the community to this github repository</p>
         </a>
         <a
-          href="https://github.com/agusting19"
+          href="https://github.com/agusting19/Weekly-Challenges-v2"
           target="_blank"
           rel="noreferrer nofollow"
           className={styles.card}
         >
-          <h2>Personal github &rarr;</h2>
-          <p>
-            It is where I upload my work and show what I am currently studying
-          </p>
+          <h2>My solutions &rarr;</h2>
+          <p>Where you can take a look to my code and &quot;logic&quot;</p>
         </a>
       </div>
     </Layout>

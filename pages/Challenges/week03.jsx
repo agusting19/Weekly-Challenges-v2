@@ -55,7 +55,6 @@ const Week03 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.statement__form}
           >
             <input
               name="number"

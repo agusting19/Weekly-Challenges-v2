@@ -49,12 +49,12 @@ const Week06 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.statement__form}
           >
             <input
               name="string"
               placeholder="Insert a string"
               onChange={onChange}
+              className={styles.statement__form__input}
             />
             <ButtonSolution />
           </form>

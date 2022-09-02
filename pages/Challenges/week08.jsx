@@ -62,12 +62,12 @@ const Week08 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.statement__form}
           >
             <input
               name="decimal"
               placeholder="Enter a decimal number"
               onChange={onChange}
+              className={styles.statement__form__input}
             />
             <ButtonSolution />
           </form>
