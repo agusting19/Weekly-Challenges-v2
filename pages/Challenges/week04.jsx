@@ -17,14 +17,14 @@ const Week04 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>Challenge 04: Polygon area</h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Easy</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 04: Polygon area</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Easy</p>
+          <p className={styles.statement__p}>
             Problem statement: Create a single function that is capable of
             calculating and returning the area of a polygon.
           </p>
-          <ul className={styles.container__statement__ul}>
+          <ul className={styles.statement__ul}>
             <li>
               The function will receive as parameter the base and height of a
               polygon at a time.
@@ -35,7 +35,7 @@ const Week04 = () => {
           </ul>
           <ButtonSolution handleClick={changeModalState} />
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week03"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week05"} text={"Next"} />
         </div>

@@ -28,23 +28,21 @@ const Week02 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 02: The Fibonacci sequence
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Hard</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 02: The Fibonacci sequence</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Hard</p>
+          <p className={styles.statement__p}>
             Problem statement: Write a program that prints the first 50 numbers
             of the Fibonacci sequence starting at 0.
           </p>
-          <p className={styles.container__statement__p}>
+          <p className={styles.statement__p}>
             The Fibonacci series is made up of a succession of numbers in which
             the next one is always the sum of the previous two. 0, 1, 1, 2, 3,
             5, 8, 13...
           </p>
           <ButtonSolution handleClick={changeModalState} />
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week01"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week03"} text={"Next"} />
         </div>

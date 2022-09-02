@@ -58,17 +58,15 @@ const Week01 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 01: It is an anagram?
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Medium</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 01: It is an anagram?</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Medium</p>
+          <p className={styles.statement__p}>
             Problem statement: Write a function that receives two words (String)
             and returns true or false (Boolean) depending on whether or not they
             are anagrams.
           </p>
-          <ul className={styles.container__statement__ul}>
+          <ul className={styles.statement__ul}>
             <li>
               An Anagram consists of forming a word by rearranging ALL the
               letters of another initial word.
@@ -82,24 +80,24 @@ const Week01 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="firstWord"
               placeholder="First word"
               onChange={onChange}
-              className={styles.container__statement__form__input}
+              className={styles.statement__form__input}
             ></input>
             <input
               name="secondWord"
               placeholder="Second word"
               onChange={onChange}
-              className={styles.container__statement__form__input}
+              className={styles.statement__form__input}
             ></input>
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week00"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week02"} text={"Next"} />
         </div>

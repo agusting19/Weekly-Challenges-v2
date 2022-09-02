@@ -38,12 +38,10 @@ const Week07 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 07: Counting words
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Medium</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 07: Counting words</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Medium</p>
+          <p className={styles.statement__p}>
             Problem statement: Create a program that counts how many times each
             word is repeated and displays the final count for all of them.
           </p>
@@ -53,7 +51,7 @@ const Week07 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="text"
@@ -63,7 +61,7 @@ const Week07 = () => {
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week06"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week08"} text={"Next"} />
         </div>

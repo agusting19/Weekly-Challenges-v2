@@ -48,12 +48,10 @@ const Week08 = () => {
   return (
     <Layout>
       <section className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 08: Decimal to Binary
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Easy</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 08: Decimal to Binary</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Easy</p>
+          <p className={styles.statement__p}>
             Problem statement: Crea un programa se encargue de transformar un
             número decimal a binario sin utilizar funciones propias del lenguaje
             que lo hagan directamente.
@@ -64,7 +62,7 @@ const Week08 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="decimal"
@@ -74,7 +72,7 @@ const Week08 = () => {
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week07"} text={"Back"} />
           <ButtonNextReturn link={"/"} text={"Next"} />
         </div>

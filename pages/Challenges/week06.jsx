@@ -35,12 +35,10 @@ const Week06 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 06: reversing strings
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Easy</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 06: reversing strings</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Easy</p>
+          <p className={styles.statement__p}>
             Problem statement: Create a program that reverses the order of a
             text string without using language functions that do it
             automatically.
@@ -51,7 +49,7 @@ const Week06 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="string"
@@ -61,7 +59,7 @@ const Week06 = () => {
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week05"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week07"} text={"Next"} />
         </div>

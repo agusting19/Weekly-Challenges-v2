@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.container__title {
+.title {
   font-size: 1.2rem;
   width: 75%;
   margin-bottom: 2rem;
@@ -12,29 +12,29 @@
   text-align: center;
 }
 
-.container__statement {
+.statement {
   width: 90%;
   max-width: 800px;
   padding: 1.5rem;
   border: 1px solid #ffffff;
 }
 
-.container__statement__p,
-.container__statement__ul {
+.statement__p,
+.statement__ul {
   margin: 0.5rem 0;
 }
 
-.container__statement__ul {
+.statement__ul {
   margin-left: 1.5rem;
 }
 
-.container__statement__form {
+.statement__form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.container__statement__form__input {
+.statement__form__input {
   width: 45%;
   height: 2rem;
   vertical-align: baseline;
@@ -44,7 +44,7 @@
   background: rgba(0, 0, 0, 0.25);
 }
 
-.container__buttons {
+.buttons {
   display: flex;
   justify-content: space-between;
   width: 80%;

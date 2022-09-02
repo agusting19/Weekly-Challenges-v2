@@ -55,16 +55,14 @@ const Week05 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 05: Aspect ratio of an image
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Hard</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 05: Aspect ratio of an image</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Hard</p>
+          <p className={styles.statement__p}>
             Problem statement: Create a program that is responsible for
             calculating the aspect ratio of an image from a url.
           </p>
-          <p className={styles.container__statement__p}>
+          <p className={styles.statement__p}>
             By ratio we refer, for example, to 16:9 of a 1920*1080px image.
           </p>
           <form
@@ -73,7 +71,7 @@ const Week05 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="imgLink"
@@ -83,7 +81,7 @@ const Week05 = () => {
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week04"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week06"} text={"Next"} />
         </div>

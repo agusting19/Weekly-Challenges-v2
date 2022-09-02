@@ -42,12 +42,10 @@ const Week03 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.container__title}>
-          Challenge 03: Is it a prime number?
-        </h2>
-        <div className={styles.container__statement}>
-          <p className={styles.container__statement__p}>Difficulty: Medium</p>
-          <p className={styles.container__statement__p}>
+        <h2 className={styles.title}>Challenge 03: Is it a prime number?</h2>
+        <div className={styles.statement}>
+          <p className={styles.statement__p}>Difficulty: Medium</p>
+          <p className={styles.statement__p}>
             Problem statement: Write a program that checks if a number is prime
             or not. Done this, print the prime numbers between 1 and 100.
           </p>
@@ -57,17 +55,18 @@ const Week03 = () => {
               onSubmit();
               changeModalState();
             }}
-            className={styles.container__statement__form}
+            className={styles.statement__form}
           >
             <input
               name="number"
               placeholder="Enter a number"
               onChange={onChange}
+              className={styles.statement__form__input}
             ></input>
             <ButtonSolution />
           </form>
         </div>
-        <div className={styles.container__buttons}>
+        <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week02"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week04"} text={"Next"} />
         </div>
