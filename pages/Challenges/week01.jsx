@@ -103,7 +103,7 @@ const Week01 = () => {
         </div>
       </div>
       <Modal isOpen={showModal} closeModal={changeModalState}>
-        <div className={styles.message}>{message}</div>
+        <div className={styles.modal__message}>{message}</div>
       </Modal>
     </Layout>
   );

@@ -86,7 +86,7 @@ const Week05 = () => {
           <ButtonNextReturn link={"/Challenges/week06"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
-          {message}
+          <div className={styles.modal__message}>{message}</div>
         </Modal>
       </div>
     </Layout>

@@ -64,7 +64,9 @@ const Week06 = () => {
           <ButtonNextReturn link={"/Challenges/week07"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
-          {input.reverse ? input.reverse : "No values entered"}
+          <div className={styles.modal__message}>
+            {input.reverse ? input.reverse : "No values entered"}
+          </div>
         </Modal>
       </div>
     </Layout>

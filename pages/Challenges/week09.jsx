@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import styles from "../../styles/challenges.module.css";
 
 // const morseCode = {
 //   A: ".-",

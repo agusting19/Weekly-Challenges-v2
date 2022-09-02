@@ -20,7 +20,8 @@
 }
 
 .statement__p,
-.statement__ul {
+.statement__ul,
+.statement__form__input {
   margin: 0.5rem 0;
 }
 
