@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #131515;
+  background-color: #42cafd;
+  padding: 14px 0px;
+}
+
+.header__title {
+  font-size: 2rem;
+}
+
+.header__burger {
+  cursor: pointer;
+  margin: 0px 1rem;
+}
+
+.header__burger__bar {
+  width: 30px;
+  height: 5px;
+  background-color: #131515;
+  margin: 5px 0;
+}

@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #131515;
+  background-color: #42cafd;
+  padding: 14px 0px;
+}
+
+.footer__links {
+  display: flex;
+  list-style: none;
+}
+
+.footer__links__link {
+  margin: 0 1rem;
+}
+
+.footer__links__link:hover {
+  color: #2e3333;
+}

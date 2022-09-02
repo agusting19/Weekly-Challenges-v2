@@ -1,0 +1,12 @@
+.button {
+  padding: 0.2rem 1rem;
+  color: #000000;
+  background-color: #ffe381;
+  border: 1px solid #ffe381;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em hsl(59, 100%, 50%);
+  transform: translateY(-0.15em);
+}
