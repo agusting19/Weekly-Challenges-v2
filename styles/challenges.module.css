@@ -21,8 +21,9 @@
 
 .statement__p,
 .statement__ul,
-.statement__form__input {
-  margin: 0.5rem 0;
+.statement__form__input,
+.select {
+  margin: 0.25rem 0;
 }
 
 .statement__ul {
@@ -39,7 +40,6 @@
 .select {
   width: 45%;
   height: 2rem;
-  vertical-align: baseline;
   border: 0;
   outline: 0;
   color: #fff;

@@ -18,8 +18,6 @@ const Week04 = () => {
   });
   let inputs;
 
-  useEffect(() => {}, []);
-
   const changeModalState = () => {
     setShowModal(!showModal);
   };

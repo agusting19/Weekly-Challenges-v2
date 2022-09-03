@@ -43,6 +43,10 @@ const Week06 = () => {
             text string without using language functions that do it
             automatically.
           </p>
+          <p className={styles.statement__p}>
+            If we passed &quot;Hello world&quot; it would return &quot;dlroW
+            olleH&quot;
+          </p>
           <form
             onSubmit={(event) => {
               event.preventDefault();

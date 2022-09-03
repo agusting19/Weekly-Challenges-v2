@@ -25,6 +25,8 @@ const Week08 = () => {
 
   const onSubmit = () => {
     let number = input.decimal;
+    let binary = "";
+
     if (number < 0) {
       return setMessage("No negative numbers accepted");
     }
@@ -32,7 +34,8 @@ const Week08 = () => {
     if (!number) {
       return setMessage("No values entered");
     }
-    let binary = "";
+
+    if (isNaN(number)) return setMessage("Only accept numbers");
 
     while (number > 0) {
       const result = number % 2;
@@ -74,7 +77,7 @@ const Week08 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week07"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week09"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
