@@ -92,7 +92,7 @@ const Week09 = () => {
     if (input.text.indexOf("  ") === -1) {
       inputArray = input.text.toUpperCase().split(" ");
       inputArray.map((word) => {
-        for (let i = 0; i <= word.length - 1; i++) {
+        for (let i = 0; i < word.length; i++) {
           solutionString += textToMorse[word[i]] + "\xa0";
         }
         solutionString += "\xa0\xa0";
@@ -157,7 +157,7 @@ const Week09 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week08"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week10"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
