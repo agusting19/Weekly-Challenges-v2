@@ -8,7 +8,7 @@ import {
 import styles from "../../styles/challenges.module.css";
 
 const Week11 = () => {
-  const [showModal, setShowModal] = useState();
+  const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState({
     firstString: "",
     secondString: "",
