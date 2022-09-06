@@ -7,7 +7,7 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const Week13 = () => {
+const Week14 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
@@ -78,8 +78,8 @@ const Week13 = () => {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link={"/Challenges/week12"} text={"Back"} />
-          <ButtonNextReturn link={"/Challenges/week14"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week13"} text={"Back"} />
+          <ButtonNextReturn link={"/Challenges/week15"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -89,4 +89,4 @@ const Week13 = () => {
   );
 };
 
-export default Week13;
+export default Week14;
