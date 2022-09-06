@@ -7,12 +7,6 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const factorialize = (num) => {
-  if (num == 0) return 1;
-
-  return num * factorialize(num - 1);
-};
-
 const Week13 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
@@ -28,13 +22,19 @@ const Week13 = () => {
     if (isNaN(input.number) || !input.number)
       return setMessage("The input has to be a natural number");
 
-    if (input.number < 0)
-      return setMessage("The input has to be a natural number");
+    if (input.number.length !== 3)
+      return setMessage("Armstrong numbers has 3 digits");
 
-    if (input.number == 0) return setMessage("The factorial of 0 is: 1");
+    const num1 = input.number[0];
+    const num2 = input.number[1];
+    const num3 = input.number[2];
 
-    const result = factorialize(input.number);
-    return setMessage(`The factorial of ${input.number} is: ${result}`);
+    const result = num1 ** 3 + num2 ** 3 + num3 ** 3;
+    if (result == input.number) {
+      return setMessage("It is an Armstrong number");
+    }
+
+    return setMessage("Its not an Armstrong number");
   };
 
   const changeModalState = () => {
@@ -44,12 +44,20 @@ const Week13 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 13: Recursive factorial</h2>
+        <h2 className={styles.title}>
+          Challenge 14: Is it an Armstrong number?
+        </h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Easy</p>
           <p className={styles.statement__p}>
-            Problem statement: Write a function that computes and returns the
-            factorial of a given number recursively.
+            Problem statement: Write a function that calculates if a given
+            number is an Armstrong (also called narcissistic) number. An
+            Armstrong number of three digits is an integer such that the sum of
+            the cubes of its digits is equal to the number itself.
+          </p>
+          <p>
+            For example, 371 is an Armstrong number since 3**3 + 7**3 + 1**3 =
+            371.
           </p>
           <form
             className={styles.form}
