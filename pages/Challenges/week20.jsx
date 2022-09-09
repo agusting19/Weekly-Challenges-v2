@@ -77,19 +77,19 @@ const Week20 = () => {
                 name="firstValue"
                 placeholder="Insert first value"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               />
               <input
                 name="secondValue"
                 placeholder="Insert second value"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               />
               <input
                 name="timeOut"
                 placeholder="Insert timeout (in seconds)"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               />
             </div>
             <ButtonSolution />

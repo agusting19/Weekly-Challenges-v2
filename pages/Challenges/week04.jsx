@@ -33,13 +33,13 @@ const Week04 = () => {
           name="firstNum"
           placeholder="Base"
           onChange={onChange}
-          className={styles.statement__form__input}
+          className={styles.input}
         ></input>
         <input
           name="secondNum"
           placeholder="Height"
           onChange={onChange}
-          className={styles.statement__form__input}
+          className={styles.input}
         ></input>
       </div>
     );
@@ -50,7 +50,7 @@ const Week04 = () => {
           name="firstNum"
           placeholder="Base"
           onChange={onChange}
-          className={styles.statement__form__input}
+          className={styles.input}
         ></input>
       </div>
     );

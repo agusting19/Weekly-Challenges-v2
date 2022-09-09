@@ -76,7 +76,7 @@ const Week05 = () => {
               name="imgLink"
               placeholder="URL of the img"
               onChange={onChange}
-              className={styles.statement__form__input}
+              className={styles.input}
             />
             <ButtonSolution />
           </form>

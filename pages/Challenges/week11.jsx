@@ -78,13 +78,13 @@ const Week11 = () => {
                 name="firstString"
                 placeholder="First string"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               ></input>
               <input
                 name="secondString"
                 placeholder="Second string"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               ></input>
             </div>
             <ButtonSolution />

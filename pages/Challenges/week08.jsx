@@ -70,7 +70,7 @@ const Week08 = () => {
               name="decimal"
               placeholder="Enter a decimal number"
               onChange={onChange}
-              className={styles.statement__form__input}
+              className={styles.input}
             />
             <ButtonSolution />
           </form>

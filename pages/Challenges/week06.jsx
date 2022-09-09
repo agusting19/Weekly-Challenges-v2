@@ -58,7 +58,7 @@ const Week06 = () => {
               name="string"
               placeholder="Insert a string"
               onChange={onChange}
-              className={styles.statement__form__input}
+              className={styles.input}
             />
             <ButtonSolution />
           </form>

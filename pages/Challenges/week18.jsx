@@ -8,77 +8,223 @@ import {
 import styles from "../../styles/challenges.module.css";
 
 const Week18 = () => {
-  // const [showModal, setShowModal] = useState(false);
-  // const [message, setMessage] = useState("");
-  // const [input, setInput] = useState({
-  //   values: "",
-  // });
+  const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
+  const [input, setInput] = useState({
+    one: "",
+    two: "",
+    three: "",
+    four: "",
+    five: "",
+    six: "",
+    seven: "",
+    eight: "",
+    nine: "",
+  });
 
-  // const onChange = (e) => {
-  //   setInput({ ...input, [e.target.name]: e.target.value });
-  // };
+  const onChange = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
 
-  // const handleSubmit = () => {};
+  const handleSubmit = () => {
+    // Inputs is an array with all the data
+    const inputs = [];
+    const { one, two, three, four, five, six, seven, eight, nine } = input;
 
-  // const changeModalState = () => {
-  //   setShowModal(!showModal);
-  // };
+    inputs.push(one, two, three, four, five, six, seven, eight, nine);
+
+    //check that there are no incorrect values, only X and O or " "
+    const verifier = inputs.filter(
+      (value) => value == "" || value == "X" || value == "O"
+    ).length;
+
+    if (verifier != 9) {
+      return setMessage("Incorrect values entered (Only accept X / O)");
+    }
+
+    //check if X and O have the same amount
+    const xCounter = inputs.filter((value) => value == "X").length;
+    const oCounter = inputs.filter((value) => value == "O").length;
+    if (xCounter != oCounter) {
+      return setMessage("X and O have to be the same amount");
+    }
+
+    //we are goint to be counting the amount of wins, if there is more than 1 the game is null
+    let winningLine = 0;
+    let winningSign = "";
+
+    //these are the possible cases
+    if (inputs[0] == inputs[1] && inputs[0] == inputs[2]) {
+      winningLine += 1;
+      winningSign = inputs[0];
+      console.log("Entro al caso 1");
+    }
+
+    if (inputs[3] == inputs[4] && inputs[3] == inputs[5]) {
+      winningLine += 1;
+      winningSign = inputs[3];
+      console.log("Entro al caso 2");
+    }
+
+    if (inputs[6] == inputs[7] && inputs[6] == inputs[8]) {
+      winningLine += 1;
+      winningSign = inputs[6];
+      console.log("Entro al caso 3");
+    }
+
+    if (inputs[0] == inputs[3] && inputs[0] == inputs[6]) {
+      winningLine += 1;
+      winningSign = inputs[0];
+      console.log("Entro al caso 4");
+    }
+
+    if (inputs[1] == inputs[4] && inputs[1] == inputs[7]) {
+      winningLine += 1;
+      winningSign = inputs[1];
+      console.log("Entro al caso 5");
+    }
+
+    if (inputs[2] == inputs[5] && inputs[2] == inputs[8]) {
+      winningLine += 1;
+      winningSign = inputs[2];
+      console.log("Entro al caso 6");
+    }
+
+    if (inputs[0] == inputs[4] && inputs[0] == inputs[8]) {
+      winningLine += 1;
+      winningSign = inputs[0];
+      console.log("Entro al caso 7");
+    }
+
+    if (inputs[2] == inputs[4] && inputs[2] == inputs[6]) {
+      winningLine += 1;
+      winningSign = inputs[2];
+      console.log("Entro al caso 8");
+    }
+
+    if (winningLine == 0) {
+      return setMessage("The game end with: Draw");
+    }
+
+    if (winningLine == 1) {
+      return setMessage(`The winner is: ${winningSign}`);
+    }
+
+    return setMessage("The game end with: Null");
+  };
+
+  const changeModalState = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <Layout>
       <div className={styles.container}>
-        {/* <h2 className={styles.title}>Challenge 18: tic tac toe</h2> */}
+        <h2 className={styles.title}>Challenge 18: tic tac toe</h2>
         <div className={styles.statement}>
-          {/* <p className={styles.statement__p}>Difficulty: Hard</p>
+          <p className={styles.statement__p}>Difficulty: Hard</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a function that evaluates if an athlete
-            has successfully passed a obstacle race. The function will receive
-            two parameters:
+            Problem statement: Create a function that parses a 3x3 matrix made
+            up of &quot;X&quot; and &quot;O&quot; and returns the following:
           </p>
           <ul className={styles.statement__ul}>
+            <li>&quot;X&quot; if they have won the &quot;X&quot;</li>
+            <li>&quot;O&quot; if they have won the &quot;O&quot;</li>
+            <li>&quot;Draw&quot; if there was a draw</li>
             <li>
-              An array that can only contain String with the words
-              &quot;run&quot; or &quot;jump&quot;.
-            </li>
-            <li>
-              A String that represents the track and can only contain
-              &quot;_&quot; (ground) or &quot;|&quot; (fence)
+              &quot;Null&quot; if the proportion of &quot;X&quot;, of
+              &quot;O&quot;, or of the matrix is not correct. Or if both have
+              won.
             </li>
           </ul>
-          <p className={styles.statement__p}>
-            The function will print how the race has finished. To do this you
-            have to make the correct option in each section of the track.
-          </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();
               changeModalState();
             }}
           >
-            <div className={styles.statement__form}>
-              <input
-                name="values1"
-                placeholder={`\xa0\xa0|\xa0\xa0|\xa0\xa0`}
-                maxLength="6"
-                onChange={onChange}
-                className={styles.statement__form__input}
-              />
+            <div className={styles.statement__form__triple}>
+              <div>
+                <input
+                  name="one"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="two"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="three"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+              </div>
+              <div>
+                <input
+                  name="four"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="five"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="six"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+              </div>
+              <div>
+                <input
+                  name="seven"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="eight"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+                <input
+                  name="nine"
+                  placeholder=" "
+                  maxLength="1"
+                  onChange={onChange}
+                  className={styles.input__v2}
+                />
+              </div>
             </div>
             <ButtonSolution />
-          </form> */}
-          <h3>
-            This challenge is broken, it would be uploaded as soon as we fix it
-          </h3>
+          </form>
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week17"} text={"Back"} />
           <ButtonNextReturn link={"/Challenges/week19"} text={"Next"} />
         </div>
-        {/* <Modal isOpen={showModal} closeModal={changeModalState}>
+        <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
-        </Modal> */}
+        </Modal>
       </div>
     </Layout>
   );

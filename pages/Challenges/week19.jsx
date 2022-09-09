@@ -70,7 +70,7 @@ const Week19 = () => {
                 name="time"
                 placeholder="Insert in format dd:hh:mm:ss"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               />
             </div>
             <ButtonSolution />

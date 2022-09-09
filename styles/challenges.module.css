@@ -21,7 +21,7 @@
 
 .statement__p,
 .statement__ul,
-.statement__form__input,
+.input,
 .select {
   margin: 0.25rem 0;
 }
@@ -36,13 +36,31 @@
   justify-content: space-between;
 }
 
-.statement__form__input,
+.input,
 .select {
   width: 45%;
   height: 2rem;
+  margin: 0.25rem 0.25rem 0.25rem 0;
   border: 0;
   outline: 0;
   color: #fff;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.statement__form__triple {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input__v2 {
+  width: 10%;
+  height: 2rem;
+  margin: 0.25rem 0.25rem;
+  padding: 0 25px;
+  border: 0;
+  outline: 0;
+  color: #ffffff;
   background: rgba(0, 0, 0, 0.25);
 }
 

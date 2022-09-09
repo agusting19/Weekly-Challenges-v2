@@ -127,13 +127,13 @@ const Week15 = () => {
                 name="firstDate"
                 placeholder="First Date (dd/mm/yyyy)"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               ></input>
               <input
                 name="secondDate"
                 placeholder="Second Date (dd/mm/yyyy)"
                 onChange={onChange}
-                className={styles.statement__form__input}
+                className={styles.input}
               ></input>
             </div>
             <ButtonSolution />
