@@ -37,7 +37,7 @@ const Week10 = () => {
     }
 
     for (let i = 0; i < textInput.length; i++) {
-      switch (textInput.charAt(i)) {
+      switch (textInput[i]) {
         case "{":
           counterArray[0] += 1;
           break;

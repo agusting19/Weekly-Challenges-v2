@@ -27,13 +27,13 @@ const Week11 = () => {
 
     for (let i = 0; i < firstInput.length; i++) {
       if (secondInput.indexOf(firstInput[i]) == -1) {
-        firstOutput += firstInput.charAt(i);
+        firstOutput += firstInput[i];
       }
     }
 
     for (let i = 0; i < secondInput.length; i++) {
       if (firstInput.indexOf(secondInput[i]) == -1) {
-        secondOutput += secondInput.charAt(i);
+        secondOutput += secondInput[i];
       }
     }
 

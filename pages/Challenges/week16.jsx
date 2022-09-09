@@ -50,7 +50,7 @@ const Week16 = () => {
     const stringArray = input.string.split(" ");
     let result = "";
     stringArray.map((word) => {
-      const firstLetter = word.charAt(0);
+      const firstLetter = word[0];
       if (alphabet[firstLetter] === undefined) {
         firstLetter = firstLetter.toLocaleLowerCase();
       }
