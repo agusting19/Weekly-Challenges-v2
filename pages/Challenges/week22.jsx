@@ -43,7 +43,6 @@ const Week22 = () => {
 
     switch (boolean) {
       case "true":
-        console.log("entro a true");
         for (let i = 0; i < longest.length; i++) {
           if (shortest.includes(longest[i])) {
             result.push(longest[i]);
@@ -57,7 +56,6 @@ const Week22 = () => {
         return setMessage(`The set result is: ${result}`);
         break;
       case "false":
-        console.log("entro a false");
         for (let i = 0; i < longest.length; i++) {
           if (!shortest.includes(longest[i])) {
             result.push(longest[i]);
