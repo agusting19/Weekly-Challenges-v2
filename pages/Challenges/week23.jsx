@@ -108,7 +108,7 @@ const Week23 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week22"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week24"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
