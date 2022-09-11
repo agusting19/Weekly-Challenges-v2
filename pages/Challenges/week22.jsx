@@ -41,37 +41,34 @@ const Week22 = () => {
       shortest = firstString.split("");
     }
 
-    switch (boolean) {
-      case "true":
-        for (let i = 0; i < longest.length; i++) {
-          if (shortest.includes(longest[i])) {
-            result.push(longest[i]);
-          }
+    if (boolean == "true") {
+      for (let i = 0; i < longest.length; i++) {
+        if (shortest.includes(longest[i])) {
+          result.push(longest[i]);
         }
+      }
 
-        if (result.length == 0) {
-          return setMessage("The result is an empty set");
-        }
+      if (result.length == 0) {
+        return setMessage("The result is an empty set");
+      }
 
-        return setMessage(`The set result is: ${result}`);
-        break;
-      case "false":
-        for (let i = 0; i < longest.length; i++) {
-          if (!shortest.includes(longest[i])) {
-            result.push(longest[i]);
-          }
-          if (!longest.includes(shortest[i])) {
-            result.push(shortest[i]);
-          }
-        }
-
-        if (result.length == 0) {
-          return setMessage("The result is an empty set");
-        }
-
-        return setMessage(`The set result is: ${result}`);
-        break;
+      return setMessage(`The set result is: ${result}`);
     }
+
+    for (let i = 0; i < longest.length; i++) {
+      if (!shortest.includes(longest[i])) {
+        result.push(longest[i]);
+      }
+      if (!longest.includes(shortest[i])) {
+        result.push(shortest[i]);
+      }
+    }
+
+    if (result.length == 0) {
+      return setMessage("The result is an empty set");
+    }
+
+    return setMessage(`The set result is: ${result}`);
   };
 
   const changeModalState = () => {
@@ -136,7 +133,7 @@ const Week22 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week21"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week23"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
