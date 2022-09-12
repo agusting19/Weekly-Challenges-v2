@@ -95,7 +95,6 @@ const Week10 = () => {
             <li>Unbalanced expression: {"{ a * ( c + d ) ] - 5 }"}</li>
           </ul>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

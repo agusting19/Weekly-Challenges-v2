@@ -60,7 +60,6 @@ const Week14 = () => {
             371.
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

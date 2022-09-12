@@ -66,7 +66,6 @@ const Week11 = () => {
             </li>
           </ul>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

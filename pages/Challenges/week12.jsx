@@ -63,7 +63,6 @@ const Week12 = () => {
             metal worm&quot;.
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

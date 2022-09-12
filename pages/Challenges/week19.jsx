@@ -58,7 +58,6 @@ const Week19 = () => {
             milliseconds
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

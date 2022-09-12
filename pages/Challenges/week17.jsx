@@ -85,7 +85,6 @@ const Week17 = () => {
             have to make the correct option in each section of the track.
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();

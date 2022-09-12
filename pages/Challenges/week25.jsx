@@ -101,7 +101,6 @@ const Week25 = () => {
             Input example: (R,S), (S,R), (P,S) - Winner: Player 2
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();
@@ -121,7 +120,7 @@ const Week25 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week24"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week26"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -132,13 +131,3 @@ const Week25 = () => {
 };
 
 export default Week25;
-
-/*
- * Crea un programa que calcule quien gana más partidas al piedra,
- * papel, tijera.
- * - El resultado puede ser: "Player 1", "Player 2", "Tie" (empate)
- * - La función recibe un listado que contiene pares, representando cada jugada.
- * - El par puede contener combinaciones de "R" (piedra), "P" (papel)
- *   o "S" (tijera).
- * - Ejemplo. Entrada: [("R","S"), ("S","R"), ("P","S")]. Resultado: "Player 2".
- */

@@ -52,7 +52,6 @@ const Week13 = () => {
             factorial of a given number recursively.
           </p>
           <form
-            className={styles.form}
             onSubmit={(event) => {
               event.preventDefault();
               handleSubmit();
