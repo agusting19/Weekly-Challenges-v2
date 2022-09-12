@@ -7,7 +7,7 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const Week25 = () => {
+const Week26 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
@@ -119,4 +119,4 @@ const Week25 = () => {
   );
 };
 
-export default Week25;
+export default Week26;
