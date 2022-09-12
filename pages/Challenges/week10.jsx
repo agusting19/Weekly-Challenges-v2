@@ -25,17 +25,6 @@ const Week10 = () => {
   const handleSubmit = () => {
     const textInput = input.text;
 
-    if (
-      counterArray[0] == 0 &&
-      counterArray[1] == 0 &&
-      counterArray[2] == 0 &&
-      counterArray[3] == 0 &&
-      counterArray[4] == 0 &&
-      counterArray[5] == 0
-    ) {
-      return setMessage("The entered value is not an expression");
-    }
-
     for (let i = 0; i < textInput.length; i++) {
       switch (textInput[i]) {
         case "{":
@@ -57,6 +46,17 @@ const Week10 = () => {
           counterArray[5] += 1;
           break;
       }
+    }
+
+    if (
+      counterArray[0] == 0 &&
+      counterArray[1] == 0 &&
+      counterArray[2] == 0 &&
+      counterArray[3] == 0 &&
+      counterArray[4] == 0 &&
+      counterArray[5] == 0
+    ) {
+      return setMessage("The entered value is not an expression");
     }
 
     if (
