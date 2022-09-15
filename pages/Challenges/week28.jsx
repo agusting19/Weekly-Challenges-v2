@@ -7,46 +7,17 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const Week27 = () => {
+const Week28 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
-  const [input, setInput] = useState({
-    firstVector: "",
-    secondVector: "",
-  });
+  const [input, setInput] = useState({});
 
   const onChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
-    const firstVector = input.firstVector.match(/-?\d*\.?\d+/g);
-    const secondVector = input.secondVector.match(/-?\d*\.?\d+/g);
-
-    if (!firstVector || !secondVector) {
-      return setMessage(
-        "Please enter values in the next format [a, a2], [b, b2]"
-      );
-    }
-
-    if (
-      !parseInt(firstVector[0]) ||
-      !parseInt(firstVector[1]) ||
-      !parseInt(secondVector[0]) ||
-      !parseInt(secondVector[1])
-    ) {
-      return setMessage(
-        "Please enter values in the next format [a, a2], [b, b2]"
-      );
-    }
-
-    const result =
-      firstVector[0] * secondVector[0] + firstVector[1] * secondVector[1];
-    if (result == 0) {
-      return setMessage("The entered vectors are orthogonal");
-    }
-
-    return setMessage("The entered vectors are not orthogonal");
+    setMessage("This challenge still not resolved");
   };
 
   const changeModalState = () => {
@@ -56,17 +27,34 @@ const Week27 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 27: Orthogonal vectors</h2>
+        <h2 className={styles.title}>Challenge 28: Vending machine</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Easy</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a program that determines if two vectors
-            are orthogonal.
+            Problem statement: Simulate the operation of a vending machine by
+            creating an operation that receives money (array of coins) and a
+            number that indicates the selection of the product.
           </p>
           <ul className={styles.statement__ul}>
-            <li>The two arrays must have the same length.</li>
             <li>
-              Each vector could be represented as an array. Example: [1, -2].
+              The program will return the name of the product and an array with
+              the money returned (with the least number of coins).
+            </li>
+            <li>
+              If the money is insufficient or the product number does not exist,
+              it must be indicated with a message and all the coins must be
+              returned.
+            </li>
+            <li>
+              If there is no money back, the array will be returned empty.
+            </li>
+            <li>
+              To make it simpler, we will work in cents with 5, 10, 50, 100 and
+              200 coins.
+            </li>
+            <li>
+              We must control that the currencies sent are within those
+              supported.
             </li>
           </ul>
           <form
@@ -79,13 +67,13 @@ const Week27 = () => {
             <div className={styles.statement__form}>
               <input
                 name="firstVector"
-                placeholder="Insert first vector"
+                placeholder="Item number"
                 onChange={onChange}
                 className={styles.input}
               />
               <input
                 name="secondVector"
-                placeholder="Insert second vector"
+                placeholder="Amount of money"
                 onChange={onChange}
                 className={styles.input}
               />
@@ -94,8 +82,8 @@ const Week27 = () => {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link={"/Challenges/week26"} text={"Back"} />
-          <ButtonNextReturn link={"/Challenges/week28"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week27"} text={"Back"} />
+          <ButtonNextReturn link={"/Challenges/week29"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -105,4 +93,4 @@ const Week27 = () => {
   );
 };
 
-export default Week27;
+export default Week28;
