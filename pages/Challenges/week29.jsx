@@ -21,7 +21,7 @@ function bubbleSort(arr, order) {
   return arr;
 }
 
-const Week27 = () => {
+const Week29 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
@@ -106,7 +106,7 @@ const Week27 = () => {
         </div>
         <div className={styles.buttons}>
           <ButtonNextReturn link={"/Challenges/week28"} text={"Back"} />
-          <ButtonNextReturn link={"/"} text={"Next"} />
+          <ButtonNextReturn link={"/Challenges/week30"} text={"Next"} />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -116,4 +116,4 @@ const Week27 = () => {
   );
 };
 
-export default Week27;
+export default Week29;

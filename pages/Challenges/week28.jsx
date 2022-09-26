@@ -16,9 +16,7 @@ const Week28 = () => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    setMessage("This challenge still not resolved");
-  };
+  const handleSubmit = () => {};
 
   const changeModalState = () => {
     setShowModal(!showModal);
