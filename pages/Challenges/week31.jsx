@@ -7,11 +7,11 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const Week30 = () => {
+function Week31() {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
-    text: "",
+    year: "",
   });
 
   const onChange = (e) => {
@@ -19,42 +19,27 @@ const Week30 = () => {
   };
 
   const handleSubmit = () => {
-    const text = input.text;
+    const year = parseInt(input.year, 10);
 
-    if (!text) {
-      return setMessage("Please enter a text");
+    if (!year) {
+      return setMessage("Please insert a valid year");
     }
 
-    const wordsArray = text.split(" ");
-    let maxLength = 0;
+    let currentYear = year + 1;
+    let yearCount = 0;
 
-    wordsArray.map((word) => {
-      if (word.length > maxLength) {
-        maxLength = word.length;
+    while (yearCount < 30) {
+      if (
+        currentYear % 4 == 0 &&
+        (currentYear % 100 != 0 || currentYear % 400 == 0)
+      ) {
+        console.log(currentYear);
+        yearCount += 1;
       }
-    });
+      currentYear += 1;
+    }
 
-    const asterisk = "*";
-    let result = asterisk.repeat(maxLength + 2);
-
-    wordsArray.map((word) => {
-      let newLine;
-      if (word.length !== maxLength) {
-        newLine = asterisk + word;
-        while (newLine.length < maxLength + 1) {
-          newLine += "\xa0";
-        }
-        newLine += asterisk;
-      } else {
-        newLine = asterisk + word + asterisk;
-      }
-      result += "\n" + newLine;
-    });
-
-    result += "\n" + asterisk.repeat(maxLength + 2);
-
-    console.log(result);
-    setMessage("You can see the result on the console");
+    return setMessage("The result is on console");
   };
 
   const changeModalState = () => {
@@ -64,13 +49,12 @@ const Week30 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 30: Word frame</h2>
+        <h2 className={styles.title}>Challenge 31: Leap years</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Easy</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a function that receives some text and
-            displays each word on one line, forming a rectangular frame of
-            asterisks.
+            Problem statement: Create a function that prints the next 30 leap
+            years after a given one.
           </p>
           <form
             onSubmit={(event) => {
@@ -81,8 +65,8 @@ const Week30 = () => {
           >
             <div className={styles.statement__form}>
               <input
-                name="text"
-                placeholder="Insert some text"
+                name="year"
+                placeholder="Insert a year"
                 onChange={onChange}
                 className={styles.input}
               />
@@ -91,8 +75,8 @@ const Week30 = () => {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link={"/Challenges/week29"} text={"Back"} />
-          <ButtonNextReturn link={"/Challenges/week31"} text={"Next"} />
+          <ButtonNextReturn link="/Challenges/week30" text="Back" />
+          <ButtonNextReturn link="/" text="Next" />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -100,6 +84,6 @@ const Week30 = () => {
       </div>
     </Layout>
   );
-};
+}
 
-export default Week30;
+export default Week31;
