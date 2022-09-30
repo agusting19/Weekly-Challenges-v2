@@ -7,11 +7,23 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-function Week31() {
+const bubbleSort = (array) => {
+  const numbers = Array.from(array); // avoid side effects
+  for (let i = 1; i < numbers.length; i++) {
+    for (let j = 0; j < numbers.length - i; j++) {
+      if (numbers[j] < numbers[j + 1]) {
+        [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
+      }
+    }
+  }
+  return numbers;
+};
+
+function Week32() {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
-    year: "",
+    numberList: "",
   });
 
   const onChange = (e) => {
@@ -19,27 +31,10 @@ function Week31() {
   };
 
   const handleSubmit = () => {
-    const year = parseInt(input.year, 10);
-
-    if (!year) {
-      return setMessage("Please insert a valid year");
-    }
-
-    let currentYear = year + 1;
-    let yearCount = 0;
-
-    while (yearCount < 30) {
-      if (
-        currentYear % 4 == 0 &&
-        (currentYear % 100 != 0 || currentYear % 400 == 0)
-      ) {
-        console.log(currentYear);
-        yearCount += 1;
-      }
-      currentYear += 1;
-    }
-
-    return setMessage("The result is on console");
+    const inputList = input.numberList.split(",");
+    const numbersList = inputList.map((number) => parseInt(number));
+    const sortedList = bubbleSort(numbersList);
+    setMessage(`The second largest number is ${sortedList[1]}`);
   };
 
   const changeModalState = () => {
@@ -49,12 +44,11 @@ function Week31() {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 31: Leap years</h2>
+        <h2 className={styles.title}>Challenge 31: The second</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Easy</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a function that prints the next 30 leap
-            years after a given one.
+            Problem statement: Given a list of numbers, find the SECOND largest.
           </p>
           <form
             onSubmit={(event) => {
@@ -65,8 +59,8 @@ function Week31() {
           >
             <div className={styles.statement__form}>
               <input
-                name="year"
-                placeholder="Insert a year"
+                name="numberList"
+                placeholder="Insert a list (n1, n2, n3...)"
                 onChange={onChange}
                 className={styles.input}
               />
@@ -75,8 +69,8 @@ function Week31() {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link="/Challenges/week30" text="Back" />
-          <ButtonNextReturn link="/Challenges/week32" text="Next" />
+          <ButtonNextReturn link="/Challenges/week31" text="Back" />
+          <ButtonNextReturn link="/" text="Next" />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -86,4 +80,4 @@ function Week31() {
   );
 }
 
-export default Week31;
+export default Week32;
