@@ -7,23 +7,27 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const bubbleSort = (array) => {
-  const numbers = Array.from(array); // avoid side effects
-  for (let i = 1; i < numbers.length; i++) {
-    for (let j = 0; j < numbers.length - i; j++) {
-      if (numbers[j] < numbers[j + 1]) {
-        [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
-      }
-    }
-  }
-  return numbers;
-};
+const elements = ["wood", "fire", "earth", "metal", "water"];
+const animals = [
+  "rat",
+  "ox",
+  "tiger",
+  "rabbit",
+  "dragon",
+  "snake",
+  "horse",
+  "goat",
+  "monkey",
+  "rooster",
+  "dog",
+  "pig",
+];
 
-function Week32() {
+const Week33 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
-    numberList: "",
+    year: "",
   });
 
   const onChange = (e) => {
@@ -31,10 +35,21 @@ function Week32() {
   };
 
   const handleSubmit = () => {
-    const inputList = input.numberList.split(",");
-    const numbersList = inputList.map((number) => parseInt(number));
-    const sortedList = bubbleSort(numbersList);
-    setMessage(`The second largest number is ${sortedList[1]}`);
+    const year = parseInt(input.year);
+
+    if (!year) {
+      return setMessage("Please enter a valid year");
+    }
+
+    if (year < 604) {
+      setMessage("The sexagesimal system started in the year 604.");
+    }
+
+    const sexagenaryYear = (year - 4) % 60;
+    const element = elements[(sexagenaryYear % 10) / 2];
+    const animal = animals[sexagenaryYear % 12];
+
+    return setMessage(`The year ${year} is the year of the ${animal} ${element}`);
   };
 
   const changeModalState = () => {
@@ -44,11 +59,15 @@ function Week32() {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 32: The second</h2>
+        <h2 className={styles.title}>
+          Challenge 33: Chinese sexagenarium cycle
+        </h2>
         <div className={styles.statement}>
-          <p className={styles.statement__p}>Difficulty: Easy</p>
+          <p className={styles.statement__p}>Difficulty: Medium</p>
           <p className={styles.statement__p}>
-            Problem statement: Given a list of numbers, find the SECOND largest.
+            Problem statement: Create a function that, given a year, indicates
+            the corresponding element and animal in the sexagenarian cycle of
+            the Chinese zodiac.
           </p>
           <form
             onSubmit={(event) => {
@@ -59,8 +78,8 @@ function Week32() {
           >
             <div className={styles.statement__form}>
               <input
-                name="numberList"
-                placeholder="Insert a list (n1, n2, n3...)"
+                name="year"
+                placeholder="Insert a year"
                 onChange={onChange}
                 className={styles.input}
               />
@@ -69,8 +88,8 @@ function Week32() {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link="/Challenges/week31" text="Back" />
-          <ButtonNextReturn link="/Challenges/week33" text="Next" />
+          <ButtonNextReturn link="/Challenges/week32" text="Back" />
+          <ButtonNextReturn link="/" text="Next" />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -78,6 +97,6 @@ function Week32() {
       </div>
     </Layout>
   );
-}
+};
 
-export default Week32;
+export default Week33;
