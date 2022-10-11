@@ -7,23 +7,7 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const elements = ["wood", "fire", "earth", "metal", "water"];
-const animals = [
-  "rat",
-  "ox",
-  "tiger",
-  "rabbit",
-  "dragon",
-  "snake",
-  "horse",
-  "goat",
-  "monkey",
-  "rooster",
-  "dog",
-  "pig",
-];
-
-const Week33 = () => {
+const Week34 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
@@ -49,7 +33,9 @@ const Week33 = () => {
     const element = elements[(sexagenaryYear % 10) / 2];
     const animal = animals[sexagenaryYear % 12];
 
-    return setMessage(`The year ${year} is the year of the ${animal} ${element}`);
+    return setMessage(
+      `The year ${year} is the year of the ${animal} ${element}`
+    );
   };
 
   const changeModalState = () => {
@@ -59,15 +45,13 @@ const Week33 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          Challenge 33: Chinese sexagenarium cycle
-        </h2>
+        <h2 className={styles.title}>Challenge 34: The lost numbers</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Medium</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a function that, given a year, indicates
-            the corresponding element and animal in the sexagenarian cycle of
-            the Chinese zodiac.
+            Problem statement: Given an ordered array of integers without
+            repeats, create a function that calculates and returns all the
+            missing values between the largest and smallest.
           </p>
           <form
             onSubmit={(event) => {
@@ -88,8 +72,8 @@ const Week33 = () => {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link="/Challenges/week32" text="Back" />
-          <ButtonNextReturn link="/Challenges/week34" text="Next" />
+          <ButtonNextReturn link="/Challenges/week33" text="Back" />
+          <ButtonNextReturn link="/" text="Next" />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -99,4 +83,4 @@ const Week33 = () => {
   );
 };
 
-export default Week33;
+export default Week34;
