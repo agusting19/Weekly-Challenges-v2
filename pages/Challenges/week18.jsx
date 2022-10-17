@@ -49,57 +49,47 @@ const Week18 = () => {
       return setMessage("X and O have to be the same amount");
     }
 
-    //we are goint to be counting the amount of wins, if there is more than 1 the game is null
     let winningLine = 0;
     let winningSign = "";
 
-    //these are the possible cases
     if (inputs[0] == inputs[1] && inputs[0] == inputs[2]) {
       winningLine += 1;
       winningSign = inputs[0];
-      console.log("Entro al caso 1");
     }
 
     if (inputs[3] == inputs[4] && inputs[3] == inputs[5]) {
       winningLine += 1;
       winningSign = inputs[3];
-      console.log("Entro al caso 2");
     }
 
     if (inputs[6] == inputs[7] && inputs[6] == inputs[8]) {
       winningLine += 1;
       winningSign = inputs[6];
-      console.log("Entro al caso 3");
     }
 
     if (inputs[0] == inputs[3] && inputs[0] == inputs[6]) {
       winningLine += 1;
       winningSign = inputs[0];
-      console.log("Entro al caso 4");
     }
 
     if (inputs[1] == inputs[4] && inputs[1] == inputs[7]) {
       winningLine += 1;
       winningSign = inputs[1];
-      console.log("Entro al caso 5");
     }
 
     if (inputs[2] == inputs[5] && inputs[2] == inputs[8]) {
       winningLine += 1;
       winningSign = inputs[2];
-      console.log("Entro al caso 6");
     }
 
     if (inputs[0] == inputs[4] && inputs[0] == inputs[8]) {
       winningLine += 1;
       winningSign = inputs[0];
-      console.log("Entro al caso 7");
     }
 
     if (inputs[2] == inputs[4] && inputs[2] == inputs[6]) {
       winningLine += 1;
       winningSign = inputs[2];
-      console.log("Entro al caso 8");
     }
 
     if (winningLine == 0) {

@@ -72,7 +72,6 @@ const Week15 = () => {
     const firstResult = dateToDays(firstDateDD, firstDateMM, firstDateYYYY);
     const secondResult = dateToDays(secondDateDD, secondDateMM, secondDateYYYY);
 
-    console.log(firstResult - secondResult);
     if (firstResult > secondResult) {
       return setMessage(
         `There are ${firstResult - secondResult} days between dates`

@@ -32,7 +32,6 @@ const Week12 = () => {
     }
 
     for (let i = 0; i < inputArray.length; i++) {
-      console.log(`izq ${inputArray[i]}, der ${reverseArray[i]}`);
       if (inputArray[i] != reverseArray[i]) {
         return setMessage("This string is not a palindrome");
       }

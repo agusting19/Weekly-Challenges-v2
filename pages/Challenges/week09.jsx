@@ -99,7 +99,6 @@ const Week09 = () => {
       });
     } else {
       inputArray = input.text.split(" ");
-      console.log(inputArray);
       inputArray.map((morse) => {
         if (morse === "") return (solutionString += "\xa0");
         solutionString += morseToText[morse];

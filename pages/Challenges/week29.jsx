@@ -55,7 +55,6 @@ const Week29 = () => {
 
     let orderedArray;
     orderedArray = bubbleSort(inputArray, order);
-    console.log(orderedArray);
     return setMessage(orderedArray);
   };
 
