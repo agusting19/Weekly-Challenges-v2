@@ -7,26 +7,11 @@ import {
 } from "../../components";
 import styles from "../../styles/challenges.module.css";
 
-const quickSort = (list) => {
-  if (list.length < 1) {
-    return [];
-  }
-
-  let smaller = [];
-  let greater = [];
-
-  for (let i = 1; i < list.length; i++) {
-    list[i] < list[0] ? smaller.push(list[i]) : greater.push(list[i]);
-  }
-
-  return [].concat(quickSort(smaller), list[0], quickSort(greater));
-};
-
-const Week39 = () => {
+const Week40 = () => {
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState("");
   const [input, setInput] = useState({
-    numbers: "",
+    side: "",
   });
 
   const onChange = (e) => {
@@ -34,27 +19,33 @@ const Week39 = () => {
   };
 
   const handleSubmit = () => {
-    if (!input.numbers) {
-      return setMessage("Please insert a list of numbers");
+    if (input.side == 0) {
+      return setMessage("The result is 0");
     }
 
-    const numbers = input.numbers.split(",");
-
-    if (numbers.length <= 1) {
-      return setMessage("Please insert a valid list like the example");
+    if (!parseInt(input.side)) {
+      return setMessage("Please input a number");
     }
 
-    const numbers2 = [];
-    numbers.map((element) => {
-      numbers2.push(parseInt(element));
-    });
-
-    if (numbers.length !== numbers2.length) {
-      return setMessage("Please insert a list of numbers like the example");
+    if (parseInt(input.side) === 1) {
+      return setMessage("The result is 1");
     }
 
-    const result = quickSort(numbers2);
-    return setMessage(`The orderer list is ${result}`);
+    let side = Math.abs(input.side);
+    let triangle = [];
+
+    for (let i = 1; i <= side; i++) {
+      let arr = [];
+      for (let o = 0; o < i; o++) {
+        o === 0 || o === i - 1
+          ? arr.push(1)
+          : arr.push(triangle[i - 2][o - 1] + triangle[i - 2][o]);
+      }
+      triangle.push(arr);
+    }
+
+    console.log(triangle);
+    return setMessage("The result is on console");
   };
 
   const changeModalState = () => {
@@ -64,15 +55,20 @@ const Week39 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 39: Quick sort</h2>
+        <h2 className={styles.title}>Challenge 40: Pascal's triangle</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Medium</p>
           <p className={styles.statement__p}>
-            Problem statement: create a function that receives an unordered list
-            of numbers and sorts them using the quick sort algorithm
+            Problem statement: Create a function that is capable of drawing the
+            "Pascal's Triangle" indicating only the size of the side.
           </p>
           <p className={styles.statement__p}>
-            e.g. of list: 4, 19, 1, 3, 22, 12, 5, 10
+            <a
+              href="https://commons.wikimedia.org/wiki/File:PascalTriangleAnimated2.gif"
+              target="_blank"
+            >
+              Here you can quickly see how the triangle is calculated.
+            </a>
           </p>
           <form
             onSubmit={(event) => {
@@ -83,8 +79,8 @@ const Week39 = () => {
           >
             <div className={styles.statement__form}>
               <input
-                name="numbers"
-                placeholder="Insert a list of numbers"
+                name="side"
+                placeholder="Insert the side of the triangle"
                 onChange={onChange}
                 className={styles.input}
               />
@@ -93,8 +89,8 @@ const Week39 = () => {
           </form>
         </div>
         <div className={styles.buttons}>
-          <ButtonNextReturn link="/Challenges/week38" text="Back" />
-          <ButtonNextReturn link="/Challenges/week40" text="Next" />
+          <ButtonNextReturn link="/Challenges/week39" text="Back" />
+          <ButtonNextReturn link="/" text="Next" />
         </div>
         <Modal isOpen={showModal} closeModal={changeModalState}>
           <div className={styles.modal__message}>{message}</div>
@@ -104,4 +100,4 @@ const Week39 = () => {
   );
 };
 
-export default Week39;
+export default Week40;
