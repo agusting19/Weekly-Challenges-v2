@@ -1,17 +1,12 @@
-import { useState } from "react";
-import {
-  Layout,
-  ButtonSolution,
-  ButtonNextReturn,
-  Modal,
-} from "../../components";
-import styles from "../../styles/challenges.module.css";
+import { useState } from 'react';
+import { Layout, ButtonSolution, ButtonNextReturn, Modal } from '../../components';
+import styles from '../../styles/challenges.module.css';
 
 const Week40 = () => {
   const [showModal, setShowModal] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [input, setInput] = useState({
-    side: "",
+    side: '',
   });
 
   const onChange = (e) => {
@@ -20,15 +15,15 @@ const Week40 = () => {
 
   const handleSubmit = () => {
     if (input.side == 0) {
-      return setMessage("The result is 0");
+      return setMessage('The result is 0');
     }
 
     if (!parseInt(input.side)) {
-      return setMessage("Please input a number");
+      return setMessage('Please input a number');
     }
 
     if (parseInt(input.side) === 1) {
-      return setMessage("The result is 1");
+      return setMessage('The result is 1');
     }
 
     let side = Math.abs(input.side);
@@ -37,15 +32,13 @@ const Week40 = () => {
     for (let i = 1; i <= side; i++) {
       let arr = [];
       for (let o = 0; o < i; o++) {
-        o === 0 || o === i - 1
-          ? arr.push(1)
-          : arr.push(triangle[i - 2][o - 1] + triangle[i - 2][o]);
+        o === 0 || o === i - 1 ? arr.push(1) : arr.push(triangle[i - 2][o - 1] + triangle[i - 2][o]);
       }
       triangle.push(arr);
     }
 
     console.log(triangle);
-    return setMessage("The result is on console");
+    return setMessage('The result is on console');
   };
 
   const changeModalState = () => {
@@ -55,17 +48,18 @@ const Week40 = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Challenge 40: Pascal's triangle</h2>
+        <h2 className={styles.title}>Challenge 40: Pascal&apos;s triangle</h2>
         <div className={styles.statement}>
           <p className={styles.statement__p}>Difficulty: Medium</p>
           <p className={styles.statement__p}>
-            Problem statement: Create a function that is capable of drawing the
-            "Pascal's Triangle" indicating only the size of the side.
+            Problem statement: Create a function that is capable of drawing the &quot;Pascal&apos;s Triangle&quot;
+            indicating only the size of the side.
           </p>
           <p className={styles.statement__p}>
             <a
               href="https://commons.wikimedia.org/wiki/File:PascalTriangleAnimated2.gif"
               target="_blank"
+              rel="noreferrer"
             >
               Here you can quickly see how the triangle is calculated.
             </a>
